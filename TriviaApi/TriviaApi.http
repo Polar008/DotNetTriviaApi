@@ -1,0 +1,39 @@
+@TriviaApi_HostAddress = https://localhost:7003
+
+GET {{TriviaApi_HostAddress}}/api/User
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiUGF1bGEiLCJVc2VySWQiOiIyIiwiZXhwIjoxNzMzMDc4OTg3LCJpc3MiOiJodHRwczovL2FwaWNvbnRhY3Rlcy5jb20iLCJhdWQiOiJodHRwczovL2Zyb250Y29udGFjdGVzLmNvbSJ9.oKeG_zzrvwomnoGJZ8XMkuLR4ZkQI45mbhYpSkiCt-Q
+
+###
+GET {{TriviaApi_HostAddress}}/api/User/1
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiUGF1bGEiLCJVc2VySWQiOiIyIiwiZXhwIjoxNzMxNTI3MzYxLCJpc3MiOiJodHRwOi8vYXBpY29udGFjdGVzLmNvbSIsImF1ZCI6Imh0dHA6Ly9mcm9udGNvbnRhY3Rlcy5jb20ifQ.vdPggB_wtJjK8oA2Oi_loNsUhe1yi5FUpfXPejR5LqA
+
+
+###
+POST {{TriviaApi_HostAddress}}/api/User
+Content-Type: application/json
+
+{
+    "username": "Paula",
+    "password": "passwordSeguro"
+}
+
+### Añadir el primer juego al usuario
+POST {{TriviaApi_HostAddress}}/api/Game
+Content-Type: application/json
+
+{
+    "score": 9,
+    "category": "Historia",
+    "userId": 1  
+}
+
+###
+POST {{TriviaApi_HostAddress}}/api/Auth/login
+Content-Type: application/json
+
+{
+    "username": "Paula",
+    "password": "passwordSeguro"
+}
